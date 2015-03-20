@@ -5,15 +5,15 @@ using System.Collections.Generic;
 public class GameController : MonoBehaviour {
 
 	public List<MinigameController> minigames;
+	
+	public TextMesh scoreText;
+	public TextMesh timerText;
 
 	public float timeLimit;
 
 	private int score;
 	private float timer;
-
-	private TextMesh scoreText;
-	private TextMesh timerText;
-
+	
 	// Update is called once per frame
 	void Update () {
 		score = 0;
