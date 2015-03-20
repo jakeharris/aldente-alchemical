@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(GameBoardController))]
 [RequireComponent(typeof(MinigameInputController))]
 [RequireComponent(typeof(Station))]
+[SerializeField]
 public abstract class MinigameController : MonoBehaviour {
 	
 	public abstract int GetScore();
