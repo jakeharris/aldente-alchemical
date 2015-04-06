@@ -2,6 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(MinigameController))]
 public class Station : MonoBehaviour {
 
@@ -22,14 +23,15 @@ public class Station : MonoBehaviour {
 	}
 
 	void Update () {
-		if (PlayerPrefs.GetString("Class") == "Baker" && minigame.GetState () == State.BakerVisible) {
-			throw new System.NotImplementedException ();
-		}
-		else if (minigame.GetState () == State.BecomingUrgent) {
-			throw new System.NotImplementedException ();
-		}
-		else if (minigame.GetState () == State.Urgent) {
-			throw new System.NotImplementedException ();
-		}
+		// These should be implemented in the animator, not here
+		//if (player.GetComponent<PlayerController>().Class == "Baker" && minigame.GetState () == State.BakerVisible) {
+			//throw new System.NotImplementedException ();
+		//}
+		//else if (minigame.GetState () == State.BecomingUrgent) {
+			//throw new System.NotImplementedException ();
+		//}
+		//else if (minigame.GetState () == State.Urgent) {
+			//throw new System.NotImplementedException ();
+		//}
 	}
 }
