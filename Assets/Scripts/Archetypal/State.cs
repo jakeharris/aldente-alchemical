@@ -6,5 +6,6 @@
 	BakerVisible,				// Pre-urgency step of visibility
 	BecomingUrgent,				// Step before final immediacy
 	Urgent,						// Immediately needs to be handled
+	Handling,					// Being handled by user
 	Completing					// Shutting down
 };
