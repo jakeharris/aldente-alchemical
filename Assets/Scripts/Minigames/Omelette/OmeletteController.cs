@@ -3,6 +3,7 @@ using System.Collections;
 
 public class OmeletteController : MinigameController {
 
+	#region Sneaky secret variables
 	private bool hasBeenCompleted = false;
 	private bool isBeingPoured = false;
 	private bool hasBeenPoured = false;
@@ -19,11 +20,15 @@ public class OmeletteController : MinigameController {
 	private int topCookedScoredPercentage = 0;
 	private int bottomCookedScoredPercentage = 0;
 	private bool isTopCooking = false;
+	#endregion
 
+	#region Editor-enabled variables
 	public float amountToCookSide;
 	public int baseScoreForCompletion = 50;
 	public int baseScoreForFlipping = 30;
+	#endregion
 
+	#region Interface implementation - MinigameController
 	public override int GetScore ()
 	{
 		return score;
@@ -36,8 +41,11 @@ public class OmeletteController : MinigameController {
 
 	protected override bool ShouldScore ()
 	{
-		return (hasTopBeenCooked && !hasTopBeenScored)
-			|| (hasBottomBeenCooked && !hasBottomBeenScored)
+		if (input is OmeletteKeyPathInputController && input.isBeingFlipped) {
+			input.isBeingFlipped = false;
+			isBeingFlipped = true;
+		}
+		return (isBeingFlipped)
 			|| (hasTopBeenCooked && hasBottomBeenCooked && hasCompletionBeenScored);
 	}
 
@@ -106,4 +114,6 @@ public class OmeletteController : MinigameController {
 		else
 			return State.Inactive;
 	}
+	#endregion
+	
 }
