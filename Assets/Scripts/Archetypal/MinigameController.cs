@@ -2,7 +2,6 @@
 using System.Collections;
 
 [RequireComponent(typeof(GameBoardController))]
-[RequireComponent(typeof(MinigameInputController))]
 [SerializeField]
 public abstract class MinigameController : MonoBehaviour {
 	
@@ -18,7 +17,7 @@ public abstract class MinigameController : MonoBehaviour {
 	protected float timer = 0f;
 	protected float timeToCompletion;
 
-	protected MinigameInputController input;
+	public MinigameInputController input;
 
 	void Update() {
 		timer += Time.deltaTime;
