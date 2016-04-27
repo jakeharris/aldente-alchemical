@@ -41,8 +41,8 @@ public class OmeletteController : MinigameController {
 
 	protected override bool ShouldScore ()
 	{
-		if (input is OmeletteKeyPathInputController && input.isBeingFlipped) {
-			input.isBeingFlipped = false;
+		if (input is OmeletteKeyPathInputController && ((OmeletteKeyPathInputController)input).isBeingFlipped) {
+            ((OmeletteKeyPathInputController)input).isBeingFlipped = false;
 			isBeingFlipped = true;
 		}
 		return (isBeingFlipped)
